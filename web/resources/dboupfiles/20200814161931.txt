@@ -1,0 +1,1059 @@
+<a href="/anavada/fbinsert.ad">[축제 DB에 insert]</a> &nbsp;&nbsp;
+<a href="/anavada/fbupdate.ad">[축제 DB에 update]</a> &nbsp;&nbsp;
+<a href="/anavada/fbdelete.ad">[축제 DB에 delete]</a> &nbsp;&nbsp;
+
+
+http://localhost:8890/anavada/views/admin/fboard/adminfboardList.jsp
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.Calendar, java.text.SimpleDateFormat"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String fboardNo = request.getParameter("fboardno");
+ 	int festivalEndDate = Integer.parseInt(request.getParameter("festivalEndDate").toString());
+	System.out.println(fboardNo + ",  "  + festivalEndDate); 
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <%@ include file="../include/head.jsp" %> 
+</head>
+	<!-- 현재 진행중이지 않은 축제 알리기 -->
+	<script type="text/javascript">
+ 	console.log(<%=fboardNo %>, <%= festivalEndDate%>);
+	<% 
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+    Calendar c1 = Calendar.getInstance();
+	int strToday = Integer.parseInt(sdf.format(c1.getTime()));
+	
+	if(festivalEndDate < strToday) { %>
+		alert('지난 축제 입니다');
+	<% } %>
+
+	</script>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <div id="wrap">
+        <%@ include file="../include/header.jsp" %>
+
+        <!-- 컨텐츠 -->
+        <div id="content">
+
+<script type="text/javascript">
+		$(function() {
+			//축제 정보 보기
+			$.ajax({
+						url : "/anavada/fbdetail",
+						type : "get",
+						data : {fboardno : <%= fboardNo%>},
+						dataType : "json",
+						success : function(data) {
+							console.log("success : " + data);
+								
+						$('#title').text(data.title);
+						$('#overview').text(data.overview);
+						$('#firstimage').attr("src", data.firstimage);
+						$('#readcount').text("조회수 " + data.readcount);
+						
+						var values = "";
+						
+						values = "<tr><td>" + data.localName + "</td><td>" 
+								+ data.period + "</td><td>" + data.homepage + "</td><td>" + data.addr1 + data.addr2 + "</td><td>" + data.telname + ", " + data.tel + "</td</tr>";
+						$('#fbdetail').append(values);
+						},
+						error : function(jqXHR, textstatus, errorthrown) {
+							console.log("error : " + jqXHR + ", " + textstatus
+									+ ", " + errorthrown);
+						}
+					}); //ajax
+
+		}); //document.ready
+	</script>
+	
+	<h2 id="title" align="center"> 축제 이름</h2>
+<p id="readcount" align="right"></p>
+<center>
+<img id="firstimage", src="" width="500" height="333" alt="NoImage">
+<hr>
+<table id="fbdetail" border="1" cellspacing="0">
+<caption id="firstimage" width='500' height='333' alt='NoImage'></caption>
+<tr><th>개최 지역</th><th>축제 기간</th><th>홈페이지</th><th>축제 상세 주소</th><th>주최/주최기관</th></tr>
+</table>
+<hr>
+</center>
+
+
+            <!--서브 비주얼/타이틀-->
+            <div class="visual-sub-vagas areaEvent-vagas">
+                <div class="vsv-copy sub-title">
+                   <div>
+                        <ul class="navi">
+                            <li><a href="#none">홈</a></li>
+                            <li><a href="#none">고객센터</a></li>
+                            <li class="glyphicon glyphicon-menu-right"><a href="#none">지역축제</a></li>
+                        </ul>
+                    </div>
+                    <h2><span>지역축제</span></h2>
+                    <h3>우리의 이웃과 'Anavada'를 통해 소통할 수 있는 공간입니다.</h3>
+                </div>
+            </div>
+            <!--서브 비주얼/타이틀 끝-->
+            
+            
+
+            <!-- 상세 -->
+            <div class="view-area areaEvent_view">
+                <h2><span>서울시 종로구</span>여우樂 페스티벌 2020</h2>
+                <ul>
+                    <li><span>작성자 : </span>관리자</li>
+                    <li><span>작성일 : </span>2020.07.30</li>
+                    <li><span>조회수 : </span>30</li>
+                   <!--  <li><i class="good_i glyphicon glyphicon-heart-empty">좋아요<span>+999</span></i></li> -->
+                </ul>
+                <div class="areaEvent_info">
+                   <div><img src="/anavada/resources/images/test/testImg.jpg" width="400px" height="400px"></div>
+                    <table>
+                        <colgroup>
+                            <col width="15%">
+                            <col width="35%">
+                            <col width="15%">
+                            <col width="35%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>축제 상세 주소</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                                 <tr>
+                                <th>축제 기간</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                            <tr>
+                                <th>홈페이지</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                            <tr>
+                                <th>주최/주최기간 문의</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2>축제설명</h2>
+                <div class="view-ctn">
+                        너 없는 지금도 눈부신 하늘과<br/>
+                        눈부시게 웃는 사람들<br/>
+                        나의 헤어짐을 모르는 세상은<br/>
+                        슬프도록 그대로인데<br/><br/>
+
+                        시간마저 데려가지 못하게<br/>
+                        나만은 널 보내지 못했나봐<br/>
+                        가시처럼 깊게 박힌 기억은<br/>
+                        아파도 아픈 줄 모르고<br/><br/>
+
+                        그대 기억이 지난 사랑이<br/>
+                        내 안을 파고 드는 가시가 되어<br/>
+                        제발 가라고 아주 가라고<br/>
+                        애써도 나를 괴롭히는데<br/><br/>
+
+                        아픈 만큼 너를 잊게 된다면<br/>
+                        차라리 앓고 나면 그만인데<br/>
+                        가시처럼 깊게 박힌 기억은<br/>
+                        아파도 아픈 줄 모르고
+                </div>
+
+
+
+                <div class="view-btn">
+                    <a href="#none" class="btn btn-prev">이전글</a>
+                    <a href="areaEvent_list.jsp" class="btn btn-list">목록</a>
+                    <a href="#none" class="btn btn-next">다음글</a>
+                </div>
+                
+                <div class="cmt_wrap">
+                    <form action="" method="">
+                        <fieldset>
+                            <div class="cmt_form">
+                                <h4 class="cmt_head">댓글 77</h4>
+                                <div class="cmt_body">
+<textarea name="" style="resize: none; width:100%; min-height:100px; max-height:100px;" onfocus="this.value='';">비방글은 작성하실 수 없습니다.</textarea>
+                                    <div class="cmt_ok"><input type="submit" value="등록"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <ul class="cmt_con">
+                        <li>
+                            <div>
+                                <h4>user : asdf123</h4><span>2020.08.16. 12:12:00</span>
+                            </div>
+                            <p>가시가 되어 제발 가라고 아주 가라고 외쳐도 나는 그대로인데. 아주 사랑했던 나를 크게 두려웠던 나를 미치도록 너를 그리워했던 날 이제는 놓아줘. 보이지 않아. 내 안에 숨어. 잊으려 하면 할 수 록 더 다가와.</p>
+                            <button>대댓글</button>
+                            <div class="Subcmt_form">
+                                <form action="" method="">
+                                    <fieldset>
+                                        <div class="cmt_form">
+                                            <div class="cmt_body">
+<textarea name="" style="resize: none; width:100%; min-height:100px; max-height:100px;" onfocus="this.value='';">비방글은 작성하실 수 없습니다.</textarea>
+                                            <div class="cmt_ok"><input type="submit" value="등록"></div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>user : asdf123</h4><span>2020.08.16. 12:12:00</span>
+                            </div>
+                            <p>가시가 되어 제발 가라고 아주 가라고 외쳐도 나는 그대로인데. 아주 사랑했던 나를 크게 두려웠던 나를 미치도록 너를 그리워했던 날 이제는 놓아줘. 보이지 않아. 내 안에 숨어. 잊으려 하면 할 수 록 더 다가와.</p>
+                            <button>대댓글</button>
+                            <div class="Subcmt_form">
+                                 <div>
+                                    <h4>user : asdf123</h4><span>2020.08.16. 12:12:00</span>
+                                </div>
+                                <p>가시가 되어 제발 가라고 아주 가라고 외쳐도 나는 그대로인데. 아주 사랑했던 나를 크게 두려웠던 나를 미치도록 너를 그리워했던 날 이제는 놓아줘. 보이지 않아. 내 안에 숨어. 잊으려 하면 할 수 록 더 다가와.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h4>user : asdf123</h4><span>2020.08.16. 12:12:00</span>
+                            </div>
+                            <p>가시가 되어 제발 가라고 아주 가라고 외쳐도 나는 그대로인데. 아주 사랑했던 나를 크게 두려웠던 나를 미치도록 너를 그리워했던 날 이제는 놓아줘. 보이지 않아. 내 안에 숨어. 잊으려 하면 할 수 록 더 다가와.</p>
+                            <button>대댓글</button>
+                        </li>
+                    </ul>
+                    <button class="cmt_in">댓글 더보기 <i class="glyphicon glyphicon-menu-right"></i></button>
+                </div>
+            </div>
+            <!-- 상세 끝 -->
+
+        </div>
+        <!-- 컨텐츠 끝 -->
+
+        <%@ include file="../include/footer.jsp" %>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+		$(function() {
+			//축제 정보 보기
+			$.ajax({
+						url : "/testjson/fbdetail",
+						type : "get",
+						data : {fboardno : <%= fboardNo%>},
+						dataType : "json",
+						success : function(data) {
+							console.log("success : " + data);
+								
+						$('#title').text(data.title);
+						$('#overview').text(data.overview);
+						$('#firstimage').attr("src", data.firstimage);
+						$('#readcount').text("조회수 " + data.readcount);
+						
+						var values = "";
+						
+						console.log(data.homepage);
+						
+						values = "<tr><td>" + data.localName + "</td><td>" 
+								+ data.period + "</td><td>" + data.homepage + "</td><td>" + data.addr1 + data.addr2 + "</td><td>" + data.telname + ", " + data.tel + "</td</tr>";
+						$('#fbdetail').append(values);
+						},
+						error : function(jqXHR, textstatus, errorthrown) {
+							console.log("error : " + jqXHR + ", " + textstatus
+									+ ", " + errorthrown);
+						}
+					}); //ajax
+
+		}); //document.ready
+
+ <tr>
+                                <th>축제 상세 주소</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                                 <tr>
+                                <th>축제 기간</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                            <tr>
+                                <th>홈페이지</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+                            <tr>
+                                <th>주최/주최기간 문의</th>
+                                <td colspan="3"><a href="#none">https://www.gov.kr/portal/vfnews/850605?pageIndex=5</a></td>
+                            </tr>
+
+
+http://192.168.30.68:8890/anavada/views/main/main.jsp
+
+http://115.90.212.21:8890
+
+
+
+
+
+
+
+package cboard.model.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import cboard.model.vo.Cboard;
+import static common.JDBCTemp.*;
+
+public class CboardDao {
+   public CboardDao() {}
+
+   public ArrayList<Cboard> selectList(Connection conn, int currentPage, int limit, String local, String search, String keyword) {
+      ArrayList<Cboard> list = new ArrayList<Cboard>();
+      PreparedStatement pstmt = null;
+      ResultSet rset = null;
+      
+      String query = "select * "
+               + "from (select rownum rnum, cboard_no, member_id, cboard_title, "
+               + "cboard_content, cboard_date, cboard_lastmodified, cboard_viewcount, "
+               + "cboard_replycount, cboard_likecount, cboard_reportcount, cboard_display, "
+               + "local_no, cfiles_original_filepath1, cfiles_rename_filepath1, "
+               + "cfiles_original_filepath2, cfiles_rename_filepath2, "
+               + "cfiles_original_filepath3, cfiles_rename_filepath3, "
+               + "cfiles_original_filepath4, cfiles_rename_filepath4 "
+               + "from (select * from cboard "
+               + (local != null && !local.equals("0") ? "where local_no = ? " : "");
+      if (local != null && !local.equals("0")) {
+         query += (search != null && search.equals("title") ? "and cboard_title like ? " : "");
+         query += (search != null && search.equals("content") ? "and cboard_content like ? " : "");
+         query += (search != null && search.equals("writer") ? "and member_id like ? " : "");
+      } else {
+         query += (search != null && search.equals("title") ? "where cboard_title like ? " : "");
+         query += (search != null && search.equals("content") ? "where cboard_content like ? " : "");
+         query += (search != null && search.equals("writer") ? "where member_id like ? " : "");
+      }
+      
+      query += "order by cboard_no desc)) where rnum >= ? and rnum <= ?";
+      
+      
+      int startRow = (currentPage - 1) * limit + 1;
+      int endRow = startRow + limit - 1;
+      
+      try {
+         int pstmtnum = 1;
+         pstmt = conn.prepareStatement(query);
+         if (local != null && !local.equals("0")) {
+            pstmt.setString(pstmtnum++, local);
+         }
+         if ((search != null && search.equals("")) || (search != null && search.equals("title"))
+               || (search != null && search.equals("content")) || (search != null &&search.equals("writer"))) {
+            pstmt.setString(pstmtnum++, "%" + keyword + "%");
+         }
+         pstmt.setInt(pstmtnum++, startRow);
+         pstmt.setInt(pstmtnum++, endRow);
+         
+         rset = pstmt.executeQuery();
+         
+         while (rset.next()) {
+            Cboard cboard = new Cboard();
+            
+            cboard.setCboardNo(rset.getInt("cboard_no"));
+            cboard.setMemberId(rset.getString("member_id"));
+            cboard.setCboardTitle(rset.getString("cboard_title"));
+            cboard.setCboardContent(rset.getString("cboard_content"));
+            cboard.setDate(rset.getDate("cboard_date"));
+            cboard.setLastmodifiedDate(rset.getDate("cboard_lastmodified"));
+            cboard.setCboardViewCount(rset.getInt("cboard_viewcount"));
+            cboard.setReplyCount(rset.getInt("cboard_replycount"));
+            cboard.setLikeCount(rset.getInt("cboard_likecount"));
+            cboard.setReportCount(rset.getInt("cboard_reportcount"));
+            cboard.setCboardDisplay(rset.getString("cboard_display"));
+            cboard.setLocalNo(rset.getString("local_no"));
+            cboard.setCfilesOriginalFilepath1(rset.getString("cfiles_original_filepath1"));
+            cboard.setCfilesRenameFilepath1(rset.getString("cfiles_rename_filepath1"));
+            cboard.setCfilesOriginalFilepath2(rset.getString("cfiles_original_filepath2"));
+            cboard.setCfilesRenameFilepath2(rset.getString("cfiles_rename_filepath2"));
+            cboard.setCfilesOriginalFilepath3(rset.getString("cfiles_original_filepath3"));
+            cboard.setCfilesRenameFilepath3(rset.getString("cfiles_rename_filepath3"));
+            cboard.setCfilesOriginalFilepath4(rset.getString("cfiles_original_filepath4"));
+            cboard.setCfilesRenameFilepath4(rset.getString("cfiles_rename_filepath4"));
+            
+            list.add(cboard);
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(rset);
+         close(pstmt);
+      }
+      return list;
+   }
+
+   public int getListCount(Connection conn, String local, String search, String keyword) {
+      int listCount = 0;
+      
+      Statement stmt = null;
+      ResultSet rset = null;
+      
+      String query = "select count(*) from cboard ";
+      
+      query += (local != null && !local.equals("0") ? "where local_no = " + local : "");
+      if (local != null && !local.equals("0")) {
+         query += (search != null && search.equals("title") ? " and cboard_title like " + "'%" + keyword + "%' " : "");
+         query += (search != null && search.equals("content") ? " and cboard_content like " + "'%" + keyword + "%' " : "");
+         query += (search != null && search.equals("writer") ? " and member_id like " + "'%" + keyword + "%' " : "");
+      } else {
+         query += (search != null && search.equals("title") ? " where cboard_title like " + "'%" + keyword + "%' " : "");
+         query += (search != null && search.equals("content") ? " where cboard_content like " + "'%" + keyword + "%' " : "");
+         query += (search != null && search.equals("writer") ? " where member_id like " + "'%" + keyword + "%' " : "");
+      }
+      try {
+         stmt = conn.createStatement();
+         rset = stmt.executeQuery(query);
+         
+         if (rset.next()) {
+            listCount = rset.getInt(1);
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(rset);
+         close(stmt);
+      }
+      return listCount;
+   }
+
+   public int addReadCount(Connection conn, int cboardNum) {
+      int result = 0;
+      PreparedStatement pstmt = null;
+      
+      String query = "update cboard set cboard_viewcount = cboard_viewcount + 1 where cboard_no = ?";
+      
+      try {
+         pstmt = conn.prepareStatement(query);
+         pstmt.setInt(1, cboardNum);
+         result = pstmt.executeUpdate();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(pstmt);
+      }
+      return result;
+   }
+
+   public Cboard selectCboard(Connection conn, int cboardNum) {
+      Cboard cboard = null;
+      PreparedStatement pstmt = null;
+      ResultSet rset = null;
+      
+      String query = "select * from cboard where cboard_no = ?";
+      
+      try {
+         pstmt = conn.prepareStatement(query);
+         pstmt.setInt(1, cboardNum);
+         rset = pstmt.executeQuery();
+         if (rset.next()) {
+            cboard = new Cboard();
+            cboard.setCboardNo(cboardNum);
+            cboard.setMemberId(rset.getString("member_id"));
+            cboard.setCboardTitle(rset.getString("cboard_title"));
+            cboard.setCboardContent(rset.getString("cboard_content"));
+            cboard.setDate(rset.getDate("cboard_date"));
+            cboard.setLastmodifiedDate(rset.getDate("cboard_lastmodified"));
+            cboard.setCboardViewCount(rset.getInt("cboard_viewcount"));
+            cboard.setReplyCount(rset.getInt("cboard_replycount"));
+            cboard.setLikeCount(rset.getInt("cboard_likecount"));
+            cboard.setReportCount(rset.getInt("cboard_reportcount"));
+            cboard.setCboardDisplay(rset.getString("cboard_display"));
+            cboard.setLocalNo(rset.getString("local_no"));
+            cboard.setCfilesOriginalFilepath1(rset.getString("cfiles_original_filepath1"));
+            cboard.setCfilesRenameFilepath1(rset.getString("cfiles_rename_filepath1"));
+            cboard.setCfilesOriginalFilepath2(rset.getString("cfiles_original_filepath2"));
+            cboard.setCfilesRenameFilepath2(rset.getString("cfiles_rename_filepath2"));
+            cboard.setCfilesOriginalFilepath3(rset.getString("cfiles_original_filepath3"));
+            cboard.setCfilesRenameFilepath3(rset.getString("cfiles_rename_filepath3"));
+            cboard.setCfilesOriginalFilepath4(rset.getString("cfiles_original_filepath4"));
+            cboard.setCfilesRenameFilepath4(rset.getString("cfiles_rename_filepath4"));
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(rset);
+         close(pstmt);
+      }
+      return cboard;
+   }
+
+   public int getAllListCount(Connection conn) {
+      int allListCount = 0;
+      
+      Statement stmt = null;
+      ResultSet rset = null;
+      
+      String query = "select max(cboard_no) from cboard";
+      
+      try {
+         stmt = conn.createStatement();
+         rset = stmt.executeQuery(query);
+         
+         if (rset.next()) {
+            allListCount = rset.getInt(1);
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(rset);
+         close(stmt);
+      }
+      return allListCount;
+   }
+
+   public int insertCboard(Connection conn, Cboard cboard) {
+      int result = 0;
+      PreparedStatement pstmt = null;
+      
+      String query = "insert into cboard values(cboard_seq.nextval, ?, ?, ?, sysdate, null, default, default, default, default, default, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      
+      try {
+         pstmt = conn.prepareStatement(query);
+         pstmt.setString(1, cboard.getMemberId());
+         pstmt.setString(2, cboard.getCboardTitle());
+         pstmt.setString(3, cboard.getCboardContent());
+         pstmt.setString(4, cboard.getLocalNo());
+         pstmt.setString(5, cboard.getCfilesOriginalFilepath1());
+         pstmt.setString(6, cboard.getCfilesRenameFilepath1());
+         pstmt.setString(7, cboard.getCfilesOriginalFilepath2());
+         pstmt.setString(8, cboard.getCfilesRenameFilepath2());
+         pstmt.setString(9, cboard.getCfilesOriginalFilepath3());
+         pstmt.setString(10, cboard.getCfilesRenameFilepath3());
+         pstmt.setString(11, cboard.getCfilesOriginalFilepath4());
+         pstmt.setString(12, cboard.getCfilesRenameFilepath4());
+         
+         result = pstmt.executeUpdate();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(pstmt);
+      }
+      
+      return result;
+   }
+
+   public int deleteCboard(Connection conn, int cboardNum) {
+      int result = 0;
+      PreparedStatement pstmt = null;
+      
+      String query = "delete from cboard where cboard_no = ?";
+      
+      try {
+         pstmt = conn.prepareStatement(query);
+         pstmt.setInt(1, cboardNum);
+         result = pstmt.executeUpdate();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(pstmt);
+      }
+      return result;
+   }
+
+   public int updateCboard(Connection conn, Cboard cboard) {
+      int result = 0;
+      PreparedStatement pstmt = null;
+      
+      String query = "update cboard set cboard_title = ?, cboard_content = ?, cfiles_original_filepath1 = ?, cfiles_rename_filepath1 = ?, cfiles_original_filepath2 = ?, cfiles_rename_filepath2 = ?, "
+            + " cfiles_original_filepath3 = ?, cfiles_rename_filepath3 = ?, cfiles_original_filepath4 = ?, cfiles_rename_filepath4 = ?, cboard_lastmodified = sysdate, local_no = ? where cboard_no = ?";
+      
+      try {
+         pstmt = conn.prepareStatement(query);
+         pstmt.setString(1, cboard.getCboardTitle());
+         pstmt.setString(2, cboard.getCboardContent());
+         pstmt.setString(3, cboard.getCfilesOriginalFilepath1());
+         pstmt.setString(4, cboard.getCfilesRenameFilepath1());
+         pstmt.setString(5, cboard.getCfilesOriginalFilepath2());
+         pstmt.setString(6, cboard.getCfilesRenameFilepath2());
+         pstmt.setString(7, cboard.getCfilesOriginalFilepath3());
+         pstmt.setString(8, cboard.getCfilesRenameFilepath3());
+         pstmt.setString(9, cboard.getCfilesOriginalFilepath4());
+         pstmt.setString(10, cboard.getCfilesRenameFilepath4());
+         pstmt.setString(11, cboard.getLocalNo());
+         pstmt.setInt(12, cboard.getCboardNo());
+         System.out.println(cboard.getLocalNo());
+         
+         result = pstmt.executeUpdate();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(pstmt);
+      }
+      
+      return result;
+   }
+
+   public int upLikeCount(Connection conn, int cboardNum) {
+      int result = 0;
+      Statement stmt = null;
+      
+      String query = "update cboard set cboard_likecount = (cboard_likecount + 1) where cboard_no = " + cboardNum;
+      
+      try {
+         stmt = conn.createStatement();
+         result = stmt.executeUpdate(query); 
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(stmt);;
+      }
+      return result;
+   }
+
+   public int upReportCount(Connection conn, int cboardNum) {
+      int result = 0;
+      Statement stmt = null;
+      
+      String query = "update cboard set cboard_reportcount = (cboard_reportcount + 1) where cboard_no = " + cboardNum;
+      
+      try {
+         stmt = conn.createStatement();
+         result = stmt.executeUpdate(query); 
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(stmt);;
+      }
+      return result;
+   }
+
+   public ArrayList<Cboard> selectTop2(Connection conn) {
+      ArrayList<Cboard> list = new ArrayList<Cboard>();
+      Statement stmt = null;
+      ResultSet rset = null;
+      String query = "select * "  
+                        + "from (select rownum rnum, cboard_no, local_no, cboard_title, cboard_content, "
+                        + "cboard_likecount, cboard_viewcount " 
+                        + "from (select * from cboard "  
+                        + "order by cboard_viewcount desc))"  
+                        + "where rnum >= 1 and rnum <= 2";
+      try {
+         stmt = conn.createStatement();
+         rset = stmt.executeQuery(query);
+         
+         while (rset.next()) {
+            Cboard cboard = new Cboard();
+            
+            cboard.setCboardNo(rset.getInt("cboard_no"));
+            cboard.setLocalNo(rset.getString("local_no"));
+            cboard.setCboardTitle(rset.getString("cboard_title"));
+            cboard.setCboardContent(rset.getString("cboard_content"));
+            cboard.setLikeCount(rset.getInt("cboard_likecount"));
+            cboard.setCboardViewCount(rset.getInt("cboard_viewcount"));
+            
+            list.add(cboard);
+         }
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close(rset);
+         close(stmt);
+      }
+      return list;
+   } 
+}
+
+
+package cboard.model.service;
+import java.sql.Connection;
+import java.util.ArrayList;
+import cboard.model.dao.CboardDao;
+import cboard.model.vo.Cboard;
+import static common.JDBCTemp.*;
+
+public class CboardService {
+   private CboardDao cdao = new CboardDao();
+   
+   public CboardService() {}
+
+   public ArrayList<Cboard> selectAll(int currentPage, int limit, String local, String search, String keyword) {
+      Connection conn = getConnection();
+      ArrayList<Cboard> list = cdao.selectList(conn, currentPage, limit, local, search, keyword);
+      close(conn);
+      return list;
+   }
+
+   public int getListCount(String local, String search, String keyword) {
+      Connection conn = getConnection();
+      int listCount = cdao.getListCount(conn, local, search, keyword);
+      close(conn);
+      return listCount;
+   }
+
+   public void addReadCount(int cboardNum) {
+      Connection conn = getConnection();
+      int result = cdao.addReadCount(conn,cboardNum);
+      if (result > 0) {
+         commit(conn);
+      } else {
+         rollback(conn);
+      }
+      close(conn);
+   }
+
+   public Cboard selectCboard(int cboardNum) {
+      Connection conn = getConnection();
+      Cboard cboard = cdao.selectCboard(conn, cboardNum);
+      close(conn);
+      return cboard;
+   }
+
+   public int getAllListCount() {
+      Connection conn = getConnection();
+      int listCount = cdao.getAllListCount(conn);
+      close(conn);
+      return listCount;
+   }
+
+   public int insertCboard(Cboard cboard) {
+      Connection conn = getConnection();
+      int result = cdao.insertCboard(conn, cboard);
+      if (result > 0) {
+         commit(conn);
+      } else {
+         rollback(conn);
+      }
+      close(conn);
+      return result;
+   }
+
+   public int deleteCboard(int cboardNum) {
+      Connection conn = getConnection();
+      int result = cdao.deleteCboard(conn, cboardNum);
+      if (result > 0) {
+         commit(conn);
+      } else {
+         rollback(conn);
+      }
+      close(conn);
+      return result;
+   }
+
+   public int updateCboard(Cboard cboard) {
+      Connection conn = getConnection();
+      int result = cdao.updateCboard(conn, cboard);
+      if (result > 0) {
+         commit(conn);
+      } else {
+         rollback(conn);
+      }
+      close(conn);
+      return result;
+   }
+
+   public int upLikeCount(int cboardNum) {
+      Connection conn = getConnection();
+      int result = cdao.upLikeCount(conn, cboardNum);
+      if (result > 0) {
+         commit(conn);
+      } else {
+         rollback(conn);
+      }
+      close(conn);
+      return result;
+   }
+
+   public int upReportCount(int cboardNum) {
+      Connection conn = getConnection();
+      int result = cdao.upReportCount(conn, cboardNum);
+      if (result > 0) {
+         commit(conn);
+      } else {
+         rollback(conn);
+      }
+      close(conn);
+      return result;
+   }
+
+   public ArrayList<Cboard> selectTop2() {
+      Connection conn = getConnection();
+      ArrayList<Cboard> list = cdao.selectTop2(conn);
+      close(conn);
+      return list;
+   }
+
+   
+
+}
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"   pageEncoding="UTF-8"%>
+<%@ page import="cboard.model.vo.Cboard, java.util.ArrayList, java.sql.Date"%>
+<%
+   ArrayList<Cboard> list = (ArrayList<Cboard>)request.getAttribute("list");
+   String local = String.valueOf(request.getAttribute("local"));
+   String search = String.valueOf(request.getAttribute("search"));
+   String keyword = String.valueOf(request.getAttribute("keyword"));
+   int listCount = ((Integer) request.getAttribute("listCount")).intValue();
+   int startPage = ((Integer) request.getAttribute("startPage")).intValue();
+   int endPage = ((Integer) request.getAttribute("endPage")).intValue();
+   int maxPage = ((Integer) request.getAttribute("maxPage")).intValue();
+   int currentPage = ((Integer) request.getAttribute("currentPage")).intValue();
+   String[] localArr = { "강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구", "도봉구", "동대문구", "동작구", "마포구", 
+         "서대문구", "서초구", "성동구", "성북구", "송파구", "양천구", "영등포구", "용산구", "은평구", "종로구", "중구", "중랑구" };
+%>
+<!DOCTYPE html>
+<html>
+<head>
+   <%@ include file="../include/head.jsp"%>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+   <div id="wrap">
+      <%@ include file="../include/header.jsp"%>
+      <!-- 컨텐츠 -->
+      <div id="content">
+         <!--서브 비주얼/타이틀-->
+         <div class="visual-sub-vagas community-vagas">
+            <div class="vsv-copy sub-title">
+               <div>
+                  <ul class="navi">
+                     <li><a href="#none">홈</a></li>
+                     <li><a href="#none">고객센터</a></li>
+                     <li class="glyphicon glyphicon-menu-right"><a href="#none">커뮤니티</a></li>
+                  </ul>
+               </div>
+               <h2>
+                  <span>커뮤니티</span>
+               </h2>
+               <h3>우리의 이웃과 'Anavada'를 통해 소통할 수 있는 공간입니다.</h3>
+            </div>
+         </div>
+         <!--서브 비주얼/타이틀 끝-->
+
+         <!-- 리스트 -->
+         <div class="list-area">
+            <!-- 지역 종류 리스트-->
+            <div class="sort-area">
+               <h4>전체 게시글   <%=listCount%>개</h4>
+               <% if(loginMember != null) {%>
+                  <a href="views/cboard/community_write.jsp" class="write_btn">글쓰기</a>
+               <% } %>
+               
+               <div>
+                  <form action="/anavada/clistview" method="get" style="display: inline-block;">
+                     지역 분류 : 
+                     <select name="local" class="LocationSelect" onchange="this.form.submit()">
+                        <option value="0" selected="selected">지역선택</option>
+                        <option value="1" <% if (local.equals("1"))  { %>selected="selected"<% } %>>강남구</option>
+                        <option value="2" <% if (local.equals("2"))  { %>selected="selected"<% } %>>강동구</option>
+                        <option value="3" <% if (local.equals("3"))  { %>selected="selected"<% } %>>강북구</option>
+                        <option value="4" <% if (local.equals("4"))  { %>selected="selected"<% } %>>강서구</option>
+                        <option value="5" <% if (local.equals("5"))  { %>selected="selected"<% } %>>관악구</option>
+                        <option value="6" <% if (local.equals("6"))  { %>selected="selected"<% } %>>광진구</option>
+                        <option value="7" <% if (local.equals("7"))  { %>selected="selected"<% } %>>구로구</option>
+                        <option value="8" <% if (local.equals("8"))  { %>selected="selected"<% } %>>금천구</option>
+                        <option value="9" <% if (local.equals("9"))  { %>selected="selected"<% } %>>노원구</option>
+                        <option value="10"<% if (local.equals("10")) { %>selected="selected"<% } %>>도봉구</option>
+                        <option value="11"<% if (local.equals("11")) { %>selected="selected"<% } %>>동대문구</option>
+                        <option value="12"<% if (local.equals("12")) { %>selected="selected"<% } %>>동작구</option>
+                        <option value="13"<% if (local.equals("13")) { %>selected="selected"<% } %>>마포구</option>
+                        <option value="14"<% if (local.equals("14")) { %>selected="selected"<% } %>>서대문구</option>
+                        <option value="15"<% if (local.equals("15")) { %>selected="selected"<% } %>>서초구</option>
+                        <option value="16"<% if (local.equals("16")) { %>selected="selected"<% } %>>성동구</option>
+                        <option value="17"<% if (local.equals("17")) { %>selected="selected"<% } %>>성북구</option>
+                        <option value="18"<% if (local.equals("18")) { %>selected="selected"<% } %>>송파구</option>
+                        <option value="19"<% if (local.equals("19")) { %>selected="selected"<% } %>>양천구</option>
+                        <option value="20"<% if (local.equals("20")) { %>selected="selected"<% } %>>영등포구</option>
+                        <option value="21"<% if (local.equals("21")) { %>selected="selected"<% } %>>용산구</option>
+                        <option value="22"<% if (local.equals("22")) { %>selected="selected"<% } %>>은평구</option>
+                        <option value="23"<% if (local.equals("23")) { %>selected="selected"<% } %>>종로구</option>
+                        <option value="24"<% if (local.equals("24")) { %>selected="selected"<% } %>>중구</option>
+                        <option value="25"<% if (local.equals("25")) { %>selected="selected"<% } %>>중랑구</option>
+                     </select>
+                  </form>
+                  
+                  <form action="/anavada/clistview" method="post"style="display: inline-block;">
+                     <input type="hidden" name="local" value="<%=local%>">
+                     <select name="search" class="ListSelect">
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                        <option value="writer">작성자</option>
+                     </select> <input type="text" name="keyword" placeholder="검색어를 입력해주세요.">
+                     <button class="top-search" type="submit"><i class="xi-search"></i></button>
+                  </form>
+               </div>
+            </div>
+
+            <table class="cmnt_list">
+               <tbody>
+                  <% for (Cboard c : list) { %>
+                     <tr onclick="location.href='/anavada/cdetail?cnum=<%=c.getCboardNo()%>&page=<%=currentPage%>&local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>'">
+                        <td class="number"><%=c.getCboardNo()%></td>
+                        <td class="title">
+                           <h2>
+                              <span><%= localArr[Integer.parseInt(c.getLocalNo()) - 1] %></span><%=c.getCboardTitle()%>
+                           </h2>
+                           <ul>
+                              <li>작성자 : <%=c.getMemberId()%></li>
+                              <li>작성일 : <%=c.getDate()%></li>
+                              <li>조회수 : <%=c.getCboardViewCount()%></li>
+                              <li><i class="good_i glyphicon glyphicon-heart-empty">좋아요<span><%=c.getLikeCount()%></span></i></li>
+                           </ul>
+                        </td>
+                        <td class="fileDown"><i class="glyphicon glyphicon-picture"></i></td>
+                     </tr>
+                  <% } %>
+                  </tbody>
+               </table>
+
+               <div class="list-no">
+                  <% if (currentPage + 1 > maxPage) {   %>
+                     <p><img src="/anavada/resources/images/btnIcn/icn_big_listNo.png" alt="" title="" /></p>
+                     <h1>목록이 없습니다.</h1>
+                  <% } %>
+               </div>
+
+            <div class="write-btn">
+               <% if(loginMember != null) {%>
+               <a href="views/cboard/community_write.jsp">글쓰기</a>
+               <% } %>
+            </div>
+
+         </div>
+
+
+         <!-- 리스트 끝 -->
+
+""
+         
+         <!-- 페이지넘버 -->
+         <dl class="list-paging pb80">
+            <dd>
+               <%
+                  if (currentPage <= 1) {
+               %>
+               <a><i class="glyphicon glyphicon-backward"></i></a>
+               <%
+                  } else {
+               %>
+               <a href="/anavada/clistview?local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>"><i class="glyphicon glyphicon-backward"></i></a>
+               <% } %>
+               <%
+                  if (startPage  <= 1) {
+               %>
+               <a><i class="glyphicon glyphicon-menu-left"></i></a>
+               <%
+                  } else {
+               %>
+               <a href="/anavada/clistview?page=<%=startPage - 10%>&local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>">
+                  <i class="glyphicon glyphicon-menu-left"></i>
+               </a>
+               <%
+                  }
+               %>
+               <%
+                  for (int p = startPage; p <= endPage; p++) {
+               %>
+               <%
+                  if (currentPage == p) {
+               %>
+               <a href="/anavada/clistview?page=<%=p%>&local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>" class="active"><%= p %></a>
+               <%
+                  } else {
+               %>
+               <a href="/anavada/clistview?page=<%=p%>&local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>"><%=p%></a>
+               <%
+                  }
+               %>
+               <%
+                  }
+               %>
+               <%
+                  if (endPage >= maxPage) {
+               %>
+               <a><i class="glyphicon glyphicon-menu-right"></i></a>
+               <%
+                  } else {
+               %>
+               <a href="/anavada/clistview?page=<%=endPage + 1%>&local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>"><i class="glyphicon glyphicon-menu-right"></i></a>
+               <%
+                  }
+               %>
+               <%
+                  if (currentPage >= maxPage) {
+               %>
+               <a><i class="glyphicon glyphicon-forward"></i></a>
+               <%
+                  } else {
+               %>
+               <a href="/anavada/clistview?page=<%=maxPage%>&local=<%=local%>&search=<%=search%>&keyword=<%=keyword%>"><i class="glyphicon glyphicon-forward"></i></a>
+               <%
+                  }
+               %> 
+            </dd>
+         </dl>
+         <!-- 페이지넘버 끝 -->
+
+      </div>
+      <!-- 컨텐츠 끝 -->
+
+      <%@ include file="../include/footer.jsp"%>
+   </div>
+</body>
+</html>
+
+all check,
+
+이번년도 축제 모두보기 체크
+checked 안된경우 지난 축제는 안보여주기 (default) ,
+제목,
+정렬 종료일 순 (default), 조회수 순,
+지역 별 0이거나 null일때 전체 (default),
+
+
+select * from fboard;
+
+CREATE SEQUENCE FBREPLY_SEQ INCREMENT BY 1 START WITH 1;
+
+-- default(check, title, local, order)
+select * from fboard 
+where festival_enddate > sysdate -1
+order by festival_enddate asc;
+
+-- check, default (title, local, order)
+select * from fboard
+order by festival_enddate asc;
+
+-- title, default(check, local, order)
+select * from fboard
+where festival_enddate > sysdate -1
+and festival_title like '%나%'
+order by festival_enddate asc;
+
+-- title, check default(local, order)
+select * from fboard
+where festival_title like '%나%'
+order by festival_enddate asc;
+
+-- local, defult
+select * from fboard
+where festival_enddate > sysdate -1
+and local_no = 1
+order by festival_enddate asc;
+
+-- check, title, local, order
+select * from fboard 
+where festival_title like '%%'
+and local_no = 1
+order by readcount desc;

@@ -1,0 +1,378 @@
+@charset "utf-8";
+
+@import url('admin_layout.css');
+@import url('board.css');
+@import url('bootstrap.css');
+@import url('xeicon.css');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
+
+
+/* 초기화 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+legend {
+    display: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+
+
+/* 사이트 기본구성*/
+
+body {
+    height:100%;
+    word-break:keep-all;
+    font-family:  'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', '돋움', sans-serif;
+}
+body,input,textarea,select,button {
+    font-size:13px; 
+    font-weight:normal;
+    line-height:22px;
+}
+table,th,h1,h2,h3,h4,h5,h6 {
+    font-size:13px;
+    color:#111;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family:'Jua';
+}
+img,input,select,textarea {
+    vertical-align:top;
+}
+a {
+    text-decoration:none;
+    color:#777;
+    letter-spacing: -0.2px;
+}
+a:hover {
+    transition:0.3s;
+}
+a:hover {
+    text-decoration:none;
+    color:#004483;
+}
+img {
+    vertical-align: middle
+}
+
+
+/* 강제클래스 */
+.ipt-fl	{float:left !important;}
+.ipt-fr	{float:right !important;}
+.ipt-cb {clear:both !important;}
+.ipt-ac {text-align:center !important;}
+.ipt-al {text-align:left !important;}
+.ipt-ar {text-align:right !important;}
+.ipt-vt {vertical-align:top !important;}
+.ipt-vm {vertical-align:middle !important;}
+.ipt-vb {vertical-align:bottom !important;}
+.ipt-jf	{text-align:justify !important;}
+.ipt-oh {overflow:hidden !important;}
+.ipt-cp {cursor:pointer !important;}
+.ipt-di {display:inline !important;}
+.ipt-dn {display:none !important;}
+.ipt-db {display:block !important;}
+.ipt-vv {visibility:visible !important;}
+.ipt-vh {visibility:hidden !important;}
+.ipt-bn {border:none !important;}
+.ipt-btn {border-top:none !important;}
+.ipt-bbn {border-bottom:none !important;}
+.ipt-bln {border-left:none !important;}
+.ipt-brn {border-right:none !important;}
+.ipt-bgn {background:none !important;}
+
+/* 가로사이즈 (%) */
+.w100p {width:100% !important;}
+.w99p {width:99% !important;}
+.w95p {width:95% !important;}
+.w94p {width:94% !important;}
+.w93p {width:93% !important;}
+.w90p {width:90% !important;}
+.w89p {width:89% !important;}
+.w88p {width:88% !important;}
+.w87p {width:87% !important;}
+.w86p {width:86% !important;}
+.w85p {width:85% !important;}
+.w84p {width:84% !important;}
+.w83p {width:83% !important;}
+.w82p {width:82% !important;}
+.w81p {width:81% !important;}
+.w80p {width:80% !important;}
+.w79p {width:79% !important;}
+.w78p {width:78% !important;}
+.w77p {width:77% !important;}
+.w76p {width:76% !important;}
+.w75p {width:75% !important;}
+.w70p {width:70% !important;}
+.w68p {width:68% !important;}
+.w67p {width:67% !important;}
+.w66p {width:66% !important;}
+.w65p {width:65% !important;}
+.w60p {width:60% !important;}
+.w55p {width:55% !important;}
+.w50p {width:50% !important;}
+.w49p {width:49% !important;}
+.w48p {width:48% !important;}
+.w46p {width:46% !important;}
+.w45p {width:45% !important;}
+.w42p {width:42% !important;}
+.w41p {width:41% !important;}
+.w40p {width:40% !important;}
+.w39p {width:39% !important;}
+.w38p {width:38% !important;}
+.w37p {width:37% !important;}
+.w36p {width:36% !important;}
+.w35p {width:35% !important;}
+.w34p {width:34% !important;}
+.w33p {width:33% !important;}
+.w32p {width:32% !important;}
+.w31p {width:31% !important;}
+.w30p {width:30% !important;}
+.w29p {width:29% !important;}
+.w28p {width:28% !important;}
+.w27p {width:27% !important;}
+.w26p {width:26% !important;}
+.w25p {width:25% !important;}
+.w24p {width:24% !important;}
+.w23p {width:23% !important;}
+.w22p {width:22% !important;}
+.w20p {width:20% !important;}
+.w19p {width:19% !important;}
+.w15p {width:15% !important;}
+.w10p {width:10% !important;}
+.w5p {width:5% !important;}
+
+/* 가로사이즈 (PX) */
+.w10 {width:10px !important;}
+.w19 {width:19px !important;}
+.w20 {width:20px !important;}
+.w24 {width:24px !important;}
+.w25 {width:25px !important;}
+.w30 {width:30px !important;}
+.w35 {width:35px !important;}
+.w40 {width:40px !important;}
+.w42 {width:42px !important;}
+.w50 {width:50px !important;}
+.w52 {width:52px !important;}
+.w60 {width:60px !important;}
+.w70 {width:70px !important;}
+.w72 {width:72px !important;}
+.w80 {width:80px !important;}
+.w82 {width:82px !important;}
+.w90 {width:90px !important;}
+.w100 {width:100px !important;}
+.w110 {width:110px !important;}
+.w120 {width:120px !important;}
+.w122 {width:122px !important;}
+.w140 {width:140px !important;}
+.w150 {width:150px !important;}
+.w152 {width:152px !important;}
+.w170 {width:170px !important;}
+.w172 {width:172px !important;}
+.w180 {width:180px !important;}
+.w182 {width:182px !important;}
+.w190 {width:190px !important;}
+.w200 {width:200px !important;}
+.w210 {width:210px !important;}
+.w220 {width:220px !important;}
+.w230 {width:230px !important;}
+.w240 {width:240px !important;}
+.w250 {width:250px !important;}
+.w252 {width:252px !important;}
+.w255 {width:255px !important;}
+.w280 {width:280px !important;}
+.w300 {width:300px !important;}
+.w310 {width:310px !important;}
+.w350 {width:350px !important;}
+.w400 {width:400px !important;}
+.w410 {width:410px !important;}
+.w450 {width:450px !important;}
+.w465 {width:465px !important;}
+.w500 {width:500px !important;}
+.w600 {width:600px !important;}
+.w610 {width:630px !important;}
+.w630 {width:630px !important;}
+.w650 {width:650px !important;}
+.w700 {width:700px !important;}
+
+/* 세로사이즈 */
+.h30 {height:30px !important;}
+.h35 {height:35px !important;}
+.h40 {height:40px !important;}
+.h42 {height:42px !important;}
+.h50 {height:50px !important;}
+.h52 {height:52px !important;}
+.h60 {height:60px !important;}
+.h70 {height:70px !important;}
+.h72 {height:72px !important;}
+.h80 {height:80px !important;}
+.h82 {height:82px !important;}
+.h90 {height:90px !important;}
+.h100 {height:100px !important;}
+.h110 {height:110px !important;}
+.h120 {height:120px !important;}
+.h122 {height:122px !important;}
+.h140 {height:140px !important;}
+.h150 {height:150px !important;}
+.h152 {height:152px !important;}
+.h170 {height:170px !important;}
+.h172 {height:172px !important;}
+.h180 {height:180px !important;}
+.h182 {height:182px !important;}
+.h190 {height:190px !important;}
+.h200 {height:200px !important;}
+.h210 {height:210px !important;}
+.h220 {height:220px !important;}
+.h230 {height:230px !important;}
+.h240 {height:240px !important;}
+.h250 {height:250px !important;}
+.h252 {height:252px !important;}
+.h255 {height:255px !important;}
+.h300 {height:300px !important;}
+.h310 {height:310px !important;}
+.h350 {height:350px !important;}
+.h400 {height:400px !important;}
+.h410 {height:410px !important;}
+.h450 {height:450px !important;}
+.h465 {height:465px !important;}
+.h500 {height:500px !important;}
+.h550 {height:550px !important;}
+.h600 {height:600px !important;}
+.h610 {height:630px !important;}
+.h630 {height:630px !important;}
+.h650 {height:650px !important;}
+.h700 {height:700px !important;}
+.h800 {height:800px !important;}
+.h850 {height:850px !important;}
+.h900 {height:900px !important;}
+
+/* 마진-상단 */
+.mt0 {margin-top:0 !important;}
+.mt1 {margin-top:1px !important;}
+.mt2 {margin-top:2px !important;}
+.mt3 {margin-top:3px !important;}
+.mt4 {margin-top:4px !important;}
+.mt5 {margin-top:5px !important;}
+.mt10 {margin-top:10px !important;}
+.mt15 {margin-top:15px !important;}
+.mt20 {margin-top:20px !important;}
+.mt25 {margin-top:25px !important;}
+.mt30 {margin-top:30px !important;}
+.mt35 {margin-top:35px !important;}
+.mt40 {margin-top:40px !important;}
+.mt45 {margin-top:45px !important;}
+.mt50 {margin-top:50px !important;}
+.mt55 {margin-top:55px !important;}
+.mt70 {margin-top:70px !important;}
+
+/* 마진-하단 */
+.mb0 {margin-bottom:0 !important;}
+.mb5 {margin-bottom:5px !important;}
+.mb10 {margin-bottom:10px !important;}
+.mb15 {margin-bottom:15px !important;}
+.mb20 {margin-bottom:20px !important;}
+.mb25 {margin-bottom:25px !important;}
+.mb30 {margin-bottom:30px !important;}
+.mb35 {margin-bottom:35px !important;}
+.mb40 {margin-bottom:40px !important;}
+.mb45 {margin-bottom:45px !important;}
+.mb50 {margin-bottom:50px !important;}
+
+/* 마진-좌측 */
+.ml0 {margin-left:0 !important;}
+.ml5 {margin-left:5px !important;}
+.ml10 {margin-left:10px !important;}
+.ml15 {margin-left:15px !important;}
+.ml20 {margin-left:20px !important;}
+.ml25 {margin-left:25px !important;}
+.ml30 {margin-left:30px !important;}
+.ml35 {margin-left:35px !important;}
+.ml40 {margin-left:40px !important;}
+.ml45 {margin-left:45px !important;}
+.ml50 {margin-left:50px !important;}
+
+/* 패딩-상단 */
+.pt0 {padding-top:0 !important;}
+.pt5 {padding-top:5px !important;}
+.pt10 {padding-top:10px !important;}
+.pt15 {padding-top:15px !important;}
+.pt20 {padding-top:20px !important;}
+.pt25 {padding-top:25px !important;}
+.pt30 {padding-top:30px !important;}
+.pt35 {padding-top:35px !important;}
+.pt40 {padding-top:40px !important;}
+.pt45 {padding-top:45px !important;}
+.pt50 {padding-top:50px !important;}
+.pt70 {padding-top:70px !important;}
+
+/* 패딩-하단 */
+.pb0 {padding-bottom:0 !important;}
+.pb5 {padding-bottom:5px !important;}
+.pb10 {padding-bottom:10px !important;}
+.pb15 {padding-bottom:15px !important;}
+.pb20 {padding-bottom:20px !important;}
+.pb25 {padding-bottom:25px !important;}
+.pb30 {padding-bottom:30px !important;}
+.pb35 {padding-bottom:35px !important;}
+.pb40 {padding-bottom:40px !important;}
+.pb45 {padding-bottom:45px !important;}
+.pb50 {padding-bottom:50px !important;}
+.pb80 {padding-bottom:80px !important;}
+
+/* 패딩-좌측 */
+.pl0 {padding-left:0 !important;}
+.pl5 {padding-left:5px !important;}
+.pl10 {padding-left:10px !important;}
+.pl15 {padding-left:15px !important;}
+.pl20 {padding-left:20px !important;}
+.pl25 {padding-left:25px !important;}
+.pl30 {padding-left:30px !important;}
+.pl35 {padding-left:35px !important;}
+.pl40 {padding-left:40px !important;}
+.pl45 {padding-left:45px !important;}
+.pl50 {padding-left:50px !important;}
+
+/* 폰트사이즈 */
+.font11 {font-size:11px !important;}
+.font12 {font-size:12px !important;}
+.font14 {font-size:14px !important;}
+.font16 {font-size:16px !important;}
+.font18 {font-size:18px !important;}
+.font20 {font-size:20px !important;}
+
+/* 폰트색상 */
+.fontColor-blue {color:#007bff !important;}
+.fontColor-indigo {color:#6610f2 !important;}
+.fontColor-purple {color:#6f42c1 !important;}
+.fontColor-pink {color:#e83e8c !important;}
+.fontColor-red {color:#dc3545 !important;}
+.fontColor-orange {color:#fd7e14 !important;}
+.fontColor-yellow {color:#ffc107 !important;}
+.fontColor-green {color:#28a745 !important;}
+.fontColor-teal {color:#20c997 !important;}
+.fontColor-cyan {color:#17a2b8 !important;}
+.fontColor-white {color:#fff !important;}
+.fontColor-gray {color:#868e96 !important;}
+.fontColor-gray-dark {color:#343a40 !important;}
+.fontColor-primary {color:#007bff !important;}
+.fontColor-secondary {color:#868e96 !important;}
+.fontColor-success {color:#28a745 !important;}
+.fontColor-info {color:#17a2b8 !important;}
+.fontColor-warning {color:#ffc107 !important;}
+.fontColor-danger {color:#dc3545 !important;}
+.fontColor-light {color:#f8f9fa !important;}
+.fontColor-dark {color:#343a40 !important;}
+

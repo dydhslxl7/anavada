@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/******* layout *******/
+#admin_header {
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:10;
+    width:210px;
+    height:100%;
+    background-color:#227fc4;
+    -webkit-box-shadow: 3px 0px 2px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 3px 0px 2px 0px rgba(204,204,204,1);
+    box-shadow: 3px 0px 2px 0px rgba(204,204,204,1);
+}
+#admin_header h1.logo {
+    width:100%;
+    background-color:#fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#admin_header .admin_gnb {
+    width:100%;
+}
+#admin_header .admin_gnb h2 {
+    border-top:1px solid #1b385a;
+    background-color:#004483;
+}
+#admin_header .admin_gnb h2 p {
+    color:#fff;
+    font-size:15px;
+    padding:8px 30px;
+}
+#admin_header .admin_gnb ul {
+}
+#admin_header .admin_gnb ul li {
+    border-top:1px solid #105fa9;
+    background-color: #2170b9;
+}
+#admin_header .admin_gnb ul li a {
+    display:block;
+    color:#fff;
+    font-size:14px;
+    line-height:18px;
+    padding:6px 35px;
+}
+#admin_header .admin_gnb ul li a:hover {
+    display:block;
+    color:#fff;
+    background:#072d5c;
+}
+#admin_footer{
+    padding : 30px 30px 30px 40px;
+    font-size:13px;
+    color:#696969;
+    border-top:1px solid #e8e8e8;
+}
+
+
+
+/*관리자컨텐츠*/
+#admin_container{
+    position:relative;
+    overflow:hidden;
+    padding-left:210px;
+}
+#admin_container .admin_title{
+    background:#fff;
+    min-width:800px;
+    background-color:#f4f4f4;
+    border-bottom:1px solid #ddd;
+}
+#admin_container .admin_title .admin_path{
+    overflow: hidden;
+    padding: 20px 40px;;
+    line-height: 40px;
+}
+#admin_container .admin_title .admin_path h3{
+    float:left;
+    color:#000;
+    font-size:32px;
+    font-weight:500;
+    padding-right: 10px;
+}
+#admin_container .admin_title .admin_path h2{
+    float:left;
+    color:#757575;
+    font-size:20px;
+}
+
+#admin_container .admin_content {
+    padding:35px 50px 0 40px;
+    width:1140px;
+    min-height:400px;
+}
+
+
+
+
+
+/*관리자 계정변경*/
+.admin-area {
+    overflow: hidden;
+    width: 100%;
+    padding: 30px 0 100px;
+    text-align: center;
+}
+.admin-area h2 {
+    overflow: hidden;
+    width: 100%;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+    padding-bottom: 25px;
+}
+.admin-area > div {
+    text-align: left;
+    border-top: 2px solid #227fc4;
+    width: 560px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+.admin-area > div table {
+    width: 100%;
+}
+.admin-area > div table tr {
+    width: 100%;
+}
+.admin-area > div table tr td {
+    padding: 3px 10px;
+    font-size: 15px;
+    color: #444;
+}
+.admin-area > div table tr td input {
+    display: inline-block;
+    height: 40px;
+}
+
+.admin-area a.btnS1 {
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    vertical-align: middle;
+    background-color: #227fc4;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 300;
+}
+.admin-area a.btnS1:hover {
+    background-color: #344fa0;
+}
+/*관리자 계정변경 끝*/
+

@@ -1,0 +1,802 @@
+@charset "utf-8";
+
+
+/* MEMBER*/
+
+
+/*MEMBER-공용*/
+.MBwrap {
+    width:100%;
+    background-color:#f4f4f4;
+    padding: 60px 0 100px;
+}
+.MBwrap > div {
+    position: relative;
+    width: 1020px;
+    margin: 0 auto;
+    background-color:#fff;
+    border: 1px solid #ccc;
+    padding: 60px;
+    background-color:#fff;
+}
+.MBwrap > div > h1 {
+    font-size: 45px;
+    line-height: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.MBwrap > div > h2 {
+    font-size: 15px;
+    color: #333;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.MBwrap > div .joinDepth {
+    width:100%; 
+    padding:0 0 50px;
+    overflow:hidden;
+    text-align: center;
+    font-size:0;
+}
+.MBwrap > div .joinDepth li {
+    display: inline-block;
+    width:200px;
+    margin: 0 15px;
+    padding:10px 0;
+    font-size:15px;
+    color:#777;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.MBwrap > div .joinDepth li.on {
+    color:#fff;
+    border-top:#FF8A3D 1px solid;
+    border-right:#FF8A3D 1px solid;
+    border-bottom:#FF8A3D 1px solid;
+    background-color:#FF8A3D;
+}
+.MBwrap > div > div {
+    text-align: left;
+}
+.MBwrap > div > div > div {
+    margin-bottom: 50px;
+}
+
+
+
+
+/*로그인*/
+.MBlogin > div {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.MBlogin > div input {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #cfcfcf;
+    text-indent: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #777;
+}
+.MBlogin > div .join_btn {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.MBlogin > div .join_btn a {
+    padding: 6px 20px;
+    font-size: 15px;
+    color: #777;
+    text-decoration:underline;
+    float: left;
+}
+.MBlogin > div .join_btn a:last-child {
+    float: right;
+}
+.MBlogin > div .login_btn {
+    line-height: 40px;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+    background-color: #FF8A3D;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+/*회원정보찾기*/
+.MBidpw > div {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.MBidpw > div input {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #cfcfcf;
+    text-indent: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #777;
+}
+.MBidpw > div .idpw_btn {
+    margin: 20px 0 0 0;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+    background-color: #FF8A3D;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+/*MEMBER-회원가입01*/
+.MBjoin-agree {
+    padding: 0 60px 60px;
+    text-align: center;
+}
+.MBjoin-agree .MBjoin-content > div > h1 {
+    font-size:20px;
+    color:#333;
+    line-height: 30px;
+}
+.MBjoin-agree .MBjoin-content > div > p {
+    border-radius: 5px;
+    margin-top:15px;
+    min-height:160px;
+    padding:20px;
+    border:#e5e5e5 1px solid;
+    background:#fff;
+    overflow:auto;
+}
+.MBjoin-agree .MBjoin-content > div > div {
+    margin-top: 15px;
+    font-size: 14px;
+}
+.MBjoin-agree .MBjoin-content > div > div input[type='radio'] {
+    margin:0 10px 0 0;
+    width:18px;
+    height:18px;
+    vertical-align: middle;
+}
+.MBwrap .ME-btn {
+    margin-top: 45px;
+    text-align: center;
+}
+.MBwrap .ME-btn a {
+    padding:10px 100px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #FF8A3D;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* 회원가입 - 정보입력 */
+.MBjoin_wrap {
+    padding: 0 60px 60px;
+}
+
+.MBjoin_input {
+}
+.MBjoin_input > ul {
+    width:100%; 
+    margin-top:30px; 
+    overflow:hidden;
+}
+.MBjoin_input > h3 {
+    margin-top:20px; 
+    font-size:20px; 
+    color:#333;
+}
+.MBjoin_input > h4 {
+    margin-top:10px; 
+    font-size:14px; 
+    color:red;
+}
+.MBjoin_input > div {
+    margin-top:15px; 
+    padding:20px 10px; 
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+.MBjoin_input > div ul {
+    width:100%; 
+    overflow:hidden;
+}
+.MBjoin_input > div ul li {
+    padding:4px 0;
+}
+.MBjoin_input > div ul li.pwArea2 {
+	border-bottom: 1px dotted #999;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+.MBjoin_input > div ul li.fileUpload {
+    line-height: 40px;
+    font-size:15px;
+    font-weight:500;
+}
+.MBjoin_input > div ul li.fileUpload > input[type="file"] {
+    height: auto;
+    line-height: normal;
+    border: 1px solid #999;
+    display : inline-block;
+	vertical-align: inherit;
+}
+.MBjoin_input > div ul li > p {
+    color:#777;
+    padding: 3px 6px;
+}
+.MBjoin_input > div ul li > h1 {
+    font-size:18px; 
+    color:#333;
+}
+.MBjoin_input > div ul li > h2 {
+    font-size: 20px;
+    padding-bottom:10px;
+}
+.MBjoin_input > div ul li > h3 {
+    padding:12px 20px; 
+    background-color:#f3f3f3;
+    font-size: 14px;
+}
+.MBjoin_input > div ul li > h3 label {
+    margin-right: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+.MBjoin_input > div ul li > h3 label input {
+    width: 14px;
+    height: 14px;
+}
+.MBjoin_input > div ul li > h3 label input {
+    width: 14px;
+    height: 14px;
+}
+.MBjoin_input > div ul li > ul {
+    width:100%; 
+    padding:10px 20px; 
+    border: 1px solid #e5e5e5;
+    overflow:hidden;
+}
+.MBjoin_input > div ul li > ul li {
+    padding:3px 0 3px 10px; 
+    font-size:12px; 
+    background:url('../images/btnIcn/icn_dot03.gif') 0 12px no-repeat;
+}
+.MBjoin_input > div ul li select {
+    color:#a5a5a5;
+}
+.MBjoin_input > p {
+    margin-top:45px; 
+    text-align:center;
+}
+.MBjoin_input > div ul li .btnS1 {
+    padding: 6px 30px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #999;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.MBjoin_input > div ul li .btnS1:hover {
+    background-color: #FF8A3D;
+}
+.MBjoin_input_btn {
+    text-align: center;
+}
+.MBjoin_input_btn input, .MBjoin_input_btn a {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 120px;
+    font-size: 14px;
+    margin-right:10px;
+    border: none;
+}
+.MBjoin_input_btn input:first-child, .MBjoin_input_btn a:first-child {
+    background-color:#fff;
+    color: #777;
+    border: 1px solid #999;
+}
+.MBjoin_input_btn input:last-child, .MBjoin_input_btn a:last-child {
+    background-color:#FF8A3D;
+    color: #fff;
+    margin-right:0;
+}
+.MBjoin_input_btn input:hover:first-child, .MBjoin_input_btn a:hover:first-child {
+    color: #FF8A3D;
+    border: 1px solid #FF8A3D;
+}
+.MBjoin_input_btn input:hover:last-child, .MBjoin_input_btn a:hover:last-child {
+    background-color:#FF8A3D;
+}
+
+
+
+
+/* 회원가입 - 가입완료 */
+.MBjoin_complete {
+    padding: 0 60px 60px;
+}
+
+.MBjoin_complete > div {
+    margin-bottom:50px;
+    padding:70px 0;
+    border-top:#333 1px solid;
+    background:#fff;
+    box-shadow:0 3px 3px rgba(0,0,0,0.1);
+}
+.MBjoin_complete > div h1 {
+    text-align:center;
+    font-size:28px;
+    line-height:28px;
+    color:#333;
+}
+.MBjoin_complete > div h1 span {
+    color:#FF8A3D;
+}
+.MBjoin_complete > div div {
+    margin:30px 0 0 !important;
+    text-align:center;
+    font-size:16px;
+}
+
+
+
+/*마이페이지 탭*/
+.MyTap {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+.MyTap ul {
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 0;
+    text-align: center;
+}
+.MyTap ul li {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 5px;
+    
+}
+.MyTap ul li a {
+    font-size: 16px;
+    line-height: 50px;
+    display: block;
+    font-weight: 500;
+}
+.MyTap ul li.active a {
+    color: #FF8A3D;
+}
+/*마이페이지 탭 끝*/
+
+
+
+/*마이페이지*/
+.mypage_area {
+    position: relative;
+    width: 1100px;
+    margin-bottom: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.mypage_area .mypage_title {
+    margin: 50px 0 30px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 40px;
+    color: #222;
+}
+
+/*프로필*/
+.profile {
+    width: 600px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 2px solid #FF8A3D;
+    background-color: rgba(255, 248, 244, 1);
+    border-radius: 20px;
+    padding: 30px;
+}
+.profile dt {
+    width: 200px;
+    line-height: 200px;
+    float: left;
+    margin-right: 50px;
+}
+.profile dt div {
+	width: 200px;
+    line-height: 200px;
+    text-align: center;
+    border: 2px solid #FF8A3D;
+    background-color: #00cebb;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+}
+.profile dt div img {
+    border-radius: 50%;
+    border: 2px solid #FF8A3D;
+}
+.profile dd {
+    float: left;
+    padding: 20px 20px;
+}
+.profile dd div {
+    line-height: 32px;
+    font-size: 15px;
+}
+.profile dd div span {
+    font-weight: 500;
+}
+
+
+
+
+/*마이페이지 정보수정*/
+.InfoModify_table {
+    width: 700px;
+    border-top: 1px solid #333;
+    margin: 0 auto;
+}
+.InfoModify_table tbody {
+    width: 100%;
+}
+.InfoModify_table tbody tr {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.InfoModify_table tbody tr td {
+    padding: 10px 0;
+}
+.InfoModify_table tbody tr td:first-child {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.InfoModify_table tbody tr td:last-child {
+    text-align: left;
+    font-size: 15px;
+    color: #777;
+    padding-right: 100px;
+}
+.InfoModify_table tbody tr td input {
+    display: inline-block;
+}
+.InfoModify_table tbody tr td input[type="file"] {
+    height: auto;
+    line-height: normal;
+    border: 1px solid #999;
+}
+.InfoModify_table tbody tr td select {
+    display: inline-block;
+}
+.InfoModify_table tbody tr td .btnS1 {
+    line-height: 34px;
+    width: 25%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #999;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+}
+.InfoModify_table tbody tr td .btnS1:hover {
+    background-color: #FF8A3D;
+}
+.InfoModify_table tbody tr td button.leaveBtn {
+    background-color: #555;
+    border: 1px solid #555;
+    color: #fff;
+}
+.InfoModify_table tbody tr td button.leaveBtn:hover {
+    background-color: #FF8A3D;
+    border: 1px solid #FF8A3D;
+}
+.mypage_area .write-btn {
+    padding-bottom: 0;
+}
+.mypage_area .write-btn a.btn-success {
+    color: #fff;
+}
+/*마이페이지 정보수정 끝*/
+
+
+
+
+
+
+
+
+
+/* 나의 문의내역-리스트 */
+.list_Inquiry {
+    position:relative;
+    width:1100px;
+    margin: 0 auto;
+    min-height: 400px;
+}
+.list_Inquiry table {
+    border-top: 1px solid #333;
+    width:100%;
+}
+.list_Inquiry table tbody {
+    width:100%;
+}
+.list_Inquiry table tbody tr {
+    width:100%;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+.list_Inquiry table tbody tr td {
+    padding: 20px 0;
+}
+.list_Inquiry table tbody tr:hover {
+    background-color: #f4f9ff;
+}
+.list_Inquiry table tbody tr td.check {
+    color: #333;
+    text-align: center;
+    width: 100px;
+}
+.list_Inquiry table tbody tr td.check label{
+    width: 100%;
+    padding: 20px 0;
+}
+.list_Inquiry table tbody tr td.check label input {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #8e8f8f;
+}
+.list_Inquiry table tbody tr td.title {
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+}
+.list_Inquiry table tbody tr td.title > h2 {
+    font-size: 20px;
+    color: #333;
+    padding-bottom: 10px;
+    word-break: break-all;
+}
+.list_Inquiry table tbody tr td.title > h2 span {
+    position: relative;
+    color: #344fa0;
+    margin-right: 30px;
+}
+.list_Inquiry table tbody tr td.title > h2 span:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ccc;
+    right: -19px;
+    top: 8px; 
+}
+.list_Inquiry table tbody tr td.title > ul {
+    overflow: hidden;
+}
+.list_Inquiry table tbody tr td.title > ul > li {
+    float: left;
+    position: relative;
+    font-size: 14px;
+    color: #777;
+    margin-right: 24px;
+}
+.list_Inquiry table tbody tr td.title > ul > li:before {
+    content: '';
+    position: absolute;
+    border-left:1px solid #ccc;
+    height: 12px;
+    top: 5px;
+    right: -12px;
+}
+.list_Inquiry table tbody tr td.title > ul > li:last-child:before {
+    border-left: none;
+}
+.list_Inquiry table tbody tr td.thumbnail_btn {
+    width: 180px;
+    text-align: center;
+}
+.list_Inquiry table tbody tr td.thumbnail_btn p {
+    width: 100%;
+    padding: 8px 0;
+    background-color: #ddd;
+    color: #333;
+    font-size: 15px;
+    border-radius: 100px;
+}
+.list_Inquiry table tbody tr td.thumbnail_btn.complete p {
+    background-color: #344fa0;
+    color: #fff;
+}
+
+.list_Inquiry .list-no {
+    text-align: center;
+    padding: 60px 0;
+}
+.list_Inquiry .write-btn {
+    padding: 10px 0 20px;
+    width: 100%;
+}
+.list_Inquiry .write-btn a {
+    font-size: 15px;
+    color: #333;
+    padding: 6px 0;
+    width: 200px;
+    border: 1px solid #777;
+    border-radius: 100px;
+    float: right;
+}
+
+
+
+/*나의 문의내역 뷰*/
+.view_Inquiry {
+    overflow: hidden;
+    width:1100px;
+    margin:0 auto;
+    padding: 40px 0 60px;
+}
+.view_Inquiry > h3 {
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.view_Inquiry > h3 span {
+    padding: 6px 40px;
+    background-color: #344fa0;
+    border-radius: 100px;
+}
+.view_Inquiry > h2 {
+    font-size: 32px;
+    line-height: 36px;
+    color: #333;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.view_Inquiry > h2 span {
+    position: relative;
+    color: #344fa0;
+    margin-right: 30px;
+    position: relative;
+}
+.view_Inquiry > h2 span:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ccc;
+    right: -22px;
+    top: 12px; 
+}
+.view_Inquiry > ul {
+    text-align: center;
+    overflow: hidden;
+    border-top: 1px solid #333;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+.view_Inquiry > ul li {
+    position: relative;
+    color: #777;
+    font-size: 14px;
+    margin: 0 20px;
+    display: inline-block;
+}
+.view_Inquiry > ul li:first-child {
+    margin-left: 0;
+}
+.view_Inquiry > ul li:last-child {
+    margin-right: 0;
+}
+.view_Inquiry > ul li:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: -22px;
+    height: 12px;
+    border-right:1px solid #ccc;
+}
+.view_Inquiry > ul li:last-child:before {
+    border-right: none;
+}
+.view_Inquiry > ul li span {
+    color: #333;
+    margin-right: 10px;
+}
+.view_Inquiry .view_ctn {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.view_Inquiry .view_ctn > p {
+    padding: 50px 40px;
+    font-size: 16px;
+    color: #666;
+    line-height: 24px;
+}
+.view_Inquiry .view_ctn .admin_request {
+    padding: 30px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+.view_Inquiry .view_ctn .admin_request h3 {
+    padding: 0 40px;
+    font-size: 14px;
+    color: #222;
+    padding-bottom: 15px;
+    font-weight: 500;
+    background-image: url(../../images/content/Answer_icon.png);
+    background-repeat: no-repeat;
+    background-size: 26px 18px;
+    background-position: left 6px top 1px;
+}
+.view_Inquiry .view_ctn .admin_request h3 span {
+    position: relative;
+    font-size: 18px;
+    color: #344fa0;
+    margin-right: 10px;
+}
+.view_Inquiry .view_ctn .admin_request h3 span:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #344fa0
+}
+.view_Inquiry .view_ctn .admin_request p {
+    padding: 0 40px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #666;
+}
+
+.view_Inquiry .view_ctn {
+    text-align: center;
+    overflow: hidden;
+    padding: 60px 0 0;
+}
+.view_Inquiry .view_ctn a {
+    display:inline-block;
+}
+.view_Inquiry .view_ctn .btn-list {
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 100px;
+    width: 180px;
+    background-color: #344e9f;
+}
+

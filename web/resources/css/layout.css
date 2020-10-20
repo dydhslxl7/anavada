@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+
+/* 기본 레이아웃[틀]  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+#wrap {position:relative; width:100%;}
+
+
+
+
+
+
+/*header*/
+.clearfix{*zoom:1}
+.clearfix:after{content:'';clear: both;display: block;}
+
+#header {
+    position:fixed;
+    top:0;
+    font-family:'Jua';
+    z-index:100;
+    width:100%;
+    box-sizing:border-box;
+    transition:all.2s ease-in-out;
+    -webkit-transition:all .2s ease-in-out;
+    border-bottom:1px solid rgba(255, 255, 255, 0.3);
+}
+#header .gnbWrap {
+    position:relative;
+    width: 1200px;
+    margin: 0 auto;
+    z-index:99;
+    padding: 20px 0;
+}
+#header .gnbWrap dt {
+    width:15%;
+    float:left;
+}
+#header .gnbWrap dt:last-child {
+    width:45%;
+    float:left;
+}
+#header .gnbWrap dd {
+    width:40%;
+    float:left;
+}
+#header .gnbWrap h1 {
+}
+#header .gnbWrap h1 a {
+    display:block;
+    height:100%;
+    color:#fff;
+    font-size:40px;
+    line-height: 40px;
+}
+#header .gnbWrap .gnb {
+    width: 100%;
+    transition:all .2s ease-in-out;
+    -webkit-transition:all .2s ease-in-out;
+}
+#header .gnbWrap .gnb:after {
+    content:'';
+    clear:both;
+    display:block;
+}
+#header .gnbWrap .gnb li {
+    display: inline-block;
+    margin:0 3px;
+}
+#header .gnbWrap .gnb li:first-child {
+    padding-left:0;
+}
+#header .gnbWrap .gnb li:last-child {
+    padding-right:0;
+    position: relative;
+}
+#header .gnbWrap .gnb li > a {
+    position: relative;
+    top: 2px;
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+    padding: 0 20px;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+#header .gnbWrap .gnb li > a:after {
+    content:'';
+    position:absolute;
+    width:60%;
+    height:3px;
+    bottom:0;
+    left: 20%;
+    right:0;
+    background-color:#fff;
+    -webkit-transform:scaleX(0);
+    transform:scaleX(0);
+    -webkit-transition:all .4s cubic-bezier(.55,.68,0,.97);
+    transition:all .4s cubic-bezier(.55,.68,0,.97);
+}
+#header .gnbWrap .gnb li:hover > a:after {
+    -webkit-transform:scaleX(1);
+    transform:scaleX(1);
+}
+#header .gnbWrap .util {
+    transition: 0.5s;
+        float: right;
+    width: 100%;
+}
+#header .gnbWrap .util li {
+    float: right;
+    margin: 0 4px;
+    position: relative;
+}
+#header .gnbWrap .util li:first-child {
+    float: left;
+}
+#header .gnbWrap .util li form {
+    position: relative;
+    padding-left: 15px;
+    width: 300px;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid #fff;
+}
+#header .gnbWrap .util li form input {
+    font-family:'Malgun Gothic', '맑은 고딕', '돋움', sans-serif;
+    width: 85%;
+    height: 36px;
+    line-height: 36px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+}
+#header .gnbWrap .util li form .top-search {
+    position: relative;
+    float: right;
+    padding: 2px 0;
+    width: 15%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 24px;
+    height: 36px;
+    line-height: 36px;
+}
+#header .gnbWrap .util li form .top-search i {
+    height: 36px;
+    line-height: 36px;
+}
+#header .gnbWrap .util li > a {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0 4px;
+    display: block;
+    color: #fff;
+    line-height: 40px;
+}
+#header .gnbWrap .util li > i {
+    font-size: 22px;
+    padding: 0 4px;
+    color: #fff;
+    line-height: 36px;
+    cursor: pointer;
+}
+#header ::-webkit-input-placeholder {
+    color: #fff;
+}
+#header :-moz-placeholder {
+    color: #fff;
+   opacity:  1;
+}
+#header ::-moz-placeholder {
+    color: #fff;
+   opacity:  1;
+}
+#header :-ms-input-placeholder {
+    color: #fff;
+}
+#header ::-ms-input-placeholder {
+    color: #fff;
+}
+
+#header ::placeholder {
+    color: #fff;
+}
+.subGnb {
+    display: none;
+    position: absolute;
+    top: 100%;
+    border-top: none;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+.subGnb > a {
+    display: inline-block;
+    padding: 4px 0 4px 10px;
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+}
+#header .gnbWrap .gnb li:hover .subGnb {
+    display: block;
+}
+
+
+
+#header.on {
+    background-color:#fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+#header.on .gnbWrap h1 a{
+    color:#FF8A3D;
+}
+#header.on .gnbWrap .gnb > li > a{
+    color:#FF8A3D;
+}
+#header.on .gnbWrap .gnb > li > a:after{
+    background-color:#FF8A3D;
+}
+#header.on .gnbWrap .util {
+    top: 32px;
+}
+#header.on .gnbWrap .util > li > a {
+    color:#FF8A3D;
+}
+#header.on .gnbWrap .util > li > i {
+    color:#FF8A3D;
+}
+#header.on .gnbWrap .util > li > a > i {
+    color:#FF8A3D;
+}
+#header.on .gnbWrap .util > li > form {
+    border: 2px solid #FF8A3D;
+}
+
+
+#header .gnbWrap .util > li > a.hover_line01 {
+    position: relative;
+}
+#header .gnbWrap .util > li > a.hover_line01:hover:before {
+    width: 80%;
+}
+#header .gnbWrap .util > li > a.hover_line01:before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.4s;
+}
+#header.on .gnbWrap .util > li > a.hover_line01:before {
+    background-color: #FF8A3D;
+}
+#header.on .gnbWrap .util > li > form .top-search {
+    color: #FF8A3D;
+}
+#header.on ::-webkit-input-placeholder {
+    color: #FF8A3D;
+}
+#header.on :-moz-placeholder {
+    color: #FF8A3D;
+   opacity:  1;
+}
+#header.on ::-moz-placeholder {
+    color: #FF8A3D;
+   opacity:  1;
+}
+#header.on :-ms-input-placeholder {
+    color: #FF8A3D;
+}
+#header.on ::-ms-input-placeholder {
+    color: #FF8A3D;
+}
+
+#header.on ::placeholder {
+    color: #FF8A3D;
+}
+
+
+
+
+/*footer*/
+#footer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0 40px;
+    background-color: #343841;
+    font-family:'Jua';
+}
+#footer dl {
+    overflow: hidden;
+    width: 1140px;
+    margin: 0 auto;
+}
+#footer dl dt {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+#footer dl dt h2 {
+    float: left;
+    width: 110px;
+    margin-right: 20px;
+}
+#footer dl dt a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    display: block;
+    margin-right:20px;
+    float: left;
+}
+#footer dl dd {
+    font-size: 14px;
+    color: #999;
+}
+#footer dl dd span {
+    font-size: 12px;
+}
+
