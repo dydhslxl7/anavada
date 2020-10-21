@@ -11,7 +11,7 @@
 + 문의사항 게시판
 + 관리자용 공지사항, 자주묻는질문, 문의사항 게시판
 
-+ [anavada/src/notice](anavada/src/notice)
++ [anavada/src/notice](dydhslxl7/anavada/src/notice)
 + [anavada/src/inquiry](anavada/src/inquiry)
 + [anavada/src/faq](anavada/src/faq)
 + [anavada/src/admin/notice](anavada/src/admin/notice)
