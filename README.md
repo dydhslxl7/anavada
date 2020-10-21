@@ -10,14 +10,13 @@
 + 자주 묻는 질문 게시판
 + 문의사항 게시판
 + 관리자용 공지사항, 자주묻는질문, 문의사항 게시판
-
-+ [anavada/src/notice](dydhslxl7/anavada/src/notice)
-+ [anavada/src/inquiry](anavada/src/inquiry)
-+ [anavada/src/faq](anavada/src/faq)
-+ [anavada/src/admin/notice](anavada/src/admin/notice)
-+ [anavada/web/views/notice](anavada/web/views/notice)
-+ [anavada/web/views/inquiry](anavada/web/views/inquiry)
-+ [anavada/web/views/admin/notice](anavada/web/views/admin/notice)
++ [anavada/src/notice](https://github.com/dydhslxl7/anavada/tree/main/src/notice)
++ [anavada/src/inquiry](https://github.com/dydhslxl7/anavada/tree/main/src/inquiry)
++ [anavada/src/faq](https://github.com/dydhslxl7/anavada/tree/main/src/faq)
++ [anavada/src/admin/notice](https://github.com/dydhslxl7/anavada/tree/main/src/admin/notice)
++ [anavada/web/views/notice](https://github.com/dydhslxl7/anavada/tree/main/web/views/notice)
++ [anavada/web/views/inquiry](https://github.com/dydhslxl7/anavada/tree/main/web/views/inquiry)
++ [anavada/web/views/admin/notice](https://github.com/dydhslxl7/anavada/tree/main/web/views/admin/notice)
 
 ## 상세 기능 설명
 
