@@ -50,7 +50,7 @@
 
 ## 🛠 개발환경
 + &#128187; Java | JSP
-+ &#127760;
-+ 🛢
-+ &#128295;
-+ &#128235;
++ &#127760; HTML | CSS | JavaScript | jQery 3.5.1
++ 🛢 Oracle Database 11g | SQL
++ &#128295; Git | SourceTree
++ &#128235; apache-tomcat-8.5.57
