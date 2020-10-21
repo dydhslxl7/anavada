@@ -11,6 +11,14 @@
 + 문의사항 게시판
 + 관리자용 공지사항, 자주묻는질문, 문의사항 게시판
 
++ [anavada/src/notice](anavada/src/notice)
++ [anavada/src/inquiry](anavada/src/inquiry)
++ [anavada/src/faq](anavada/src/faq)
++ [anavada/src/admin/notice](anavada/src/admin/notice)
++ [anavada/web/views/notice](anavada/web/views/notice)
++ [anavada/web/views/inquiry](anavada/web/views/inquiry)
++ [anavada/web/views/admin/notice](anavada/web/views/admin/notice)
+
 ## 상세 기능 설명
 
 1. 공지사항 게시판
