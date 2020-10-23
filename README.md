@@ -54,6 +54,9 @@
 	+ 파일 첨부 게시글은 파일 아이콘 표시
 	+ 관리자 페이지
 		+ 체크박스 일괄 삭제 기능
+		
+## 포트폴리오
+[PDF 포트폴리오](https://drive.google.com/file/d/18TkvVzvGsQ9JerQOh7JYbcm6w7Tue6bF/view?usp=sharing)
 
 ## 🛠 개발환경
 + &#128187; Java | JSP
